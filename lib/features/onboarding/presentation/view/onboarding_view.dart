@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:scooter_app/core/resources/color_manager.dart';
 import 'package:scooter_app/features/onboarding/data/model/onboarding_model.dart';
+import 'package:scooter_app/features/onboarding/presentation/manager/change_page_cubit/change_page_cubit.dart';
 
 import '../../../../core/resources/string_manager.dart';
 
@@ -12,7 +14,6 @@ class OnBoardingView extends StatefulWidget {
 }
 
 PageController _controller = PageController();
-int _currentIndex = 0;
 final List<OnboardingModel> _onboardingModels = [
   OnboardingModel(
       title: StringManager.onboarding1Title,
@@ -46,11 +47,14 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: PageView(
+          child: BlocProvider(
+  create: (context) => ChangePageCubit(),
+  child: PageView(
             controller: _controller,
             physics: const NeverScrollableScrollPhysics(),
             children: _pages,
           ),
+),
         ),
       ),
     );
@@ -66,28 +70,28 @@ class Page extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        SizedBox(height: 0,),
-        Text(model.title,style: Theme.of(context).textTheme.displayLarge),
+        const SizedBox(
+          height: 0,
+        ),
+        Text(model.title, style: Theme.of(context).textTheme.displayLarge),
         Column(
           children: [
             SizedBox(
-              width: MediaQuery.sizeOf(context).width/1.9,
+                width: MediaQuery.sizeOf(context).width / 1.9,
                 child: AspectRatio(
-                  aspectRatio: 1/1,
-                    child: Image.asset(model.imgUrl))
+                    aspectRatio: 1 / 1, child: Image.asset(model.imgUrl))),
+            Text(
+              model.about,
+              style: Theme.of(context).textTheme.bodyMedium,
+              textAlign: TextAlign.center,
             ),
-            Text(model.about,style: Theme.of(context).textTheme.bodyMedium,textAlign: TextAlign.center,),
           ],
         ),
         GestureDetector(
-          onTap: (){
-            if(_currentIndex != 2){
-              _currentIndex += 1;
-              _controller.nextPage(duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
-            }else{
-
-            }
-
+          onTap: () {
+            if (BlocProvider.of<ChangePageCubit>(context).currentIndex != 2) {
+              BlocProvider.of<ChangePageCubit>(context).changePage(controller: _controller);
+            } else {}
           },
           child: Container(
             width: MediaQuery.sizeOf(context).width / 2,
