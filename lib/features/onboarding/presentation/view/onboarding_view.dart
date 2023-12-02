@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:scooter_app/core/resources/color_manager.dart';
 import 'package:scooter_app/features/onboarding/data/model/onboarding_model.dart';
 import 'package:scooter_app/features/onboarding/presentation/manager/change_page_cubit/change_page_cubit.dart';
 
 import '../../../../core/resources/string_manager.dart';
+import '../../../../core/utils/app_router.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({Key? key}) : super(key: key);
@@ -91,7 +93,9 @@ class Page extends StatelessWidget {
           onTap: () {
             if (BlocProvider.of<ChangePageCubit>(context).currentIndex != 2) {
               BlocProvider.of<ChangePageCubit>(context).changePage(controller: _controller);
-            } else {}
+            } else {
+              GoRouter.of(context).pushReplacement(RouterPath.homeView);
+            }
           },
           child: Container(
             width: MediaQuery.sizeOf(context).width / 2,

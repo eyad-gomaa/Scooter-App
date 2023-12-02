@@ -3,6 +3,7 @@ import 'package:scooter_app/features/onboarding/presentation/view/onboarding_vie
 
 import 'core/theme/dark_theme.dart';
 import 'core/theme/light_theme.dart';
+import 'core/utils/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +15,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       theme: darkTheme(),
-      home: const OnBoardingView()
+        routerConfig: router
     );
   }
 }
