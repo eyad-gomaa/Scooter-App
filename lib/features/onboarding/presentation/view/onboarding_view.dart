@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:scooter_app/core/resources/color_manager.dart';
-import 'package:scooter_app/core/shared/constants.dart';
 import 'package:scooter_app/features/onboarding/data/model/onboarding_model.dart';
+
+import '../../../../core/resources/string_manager.dart';
 
 class OnBoardingView extends StatefulWidget {
   const OnBoardingView({Key? key}) : super(key: key);
@@ -14,17 +15,17 @@ PageController _controller = PageController();
 int _currentIndex = 0;
 final List<OnboardingModel> _onboardingModels = [
   OnboardingModel(
-      title: onboarding1Title,
+      title: StringManager.onboarding1Title,
       imgUrl: "assets/images/Delivery-amico.png",
-      about: onboardingAbout),
+      about: StringManager.onboardingAbout),
   OnboardingModel(
-      title: onboarding2Title,
+      title: StringManager.onboarding2Title,
       imgUrl: "assets/images/Instruction_manual.png",
-      about: onboardingAbout),
+      about: StringManager.onboardingAbout),
   OnboardingModel(
-      title: onboarding3Title,
+      title: StringManager.onboarding3Title,
       imgUrl: "assets/images/mechanic.png",
-      about: onboardingAbout)
+      about: StringManager.onboardingAbout)
 ];
 final List<Widget> _pages = [
   Page(
@@ -65,7 +66,8 @@ class Page extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(model.title,style: const TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+        SizedBox(height: 0,),
+        Text(model.title,style: Theme.of(context).textTheme.displayLarge),
         Column(
           children: [
             SizedBox(
@@ -74,7 +76,7 @@ class Page extends StatelessWidget {
                   aspectRatio: 1/1,
                     child: Image.asset(model.imgUrl))
             ),
-            Text(model.about,style: const TextStyle(color: Colors.grey),textAlign: TextAlign.center,),
+            Text(model.about,style: Theme.of(context).textTheme.bodyMedium,textAlign: TextAlign.center,),
           ],
         ),
         GestureDetector(
@@ -93,10 +95,10 @@ class Page extends StatelessWidget {
             decoration: BoxDecoration(
                 color: ColorManager.redColor,
                 borderRadius: BorderRadius.circular(15)),
-            child: const Center(
+            child: Center(
               child: Text(
                 "التالي",
-                style: TextStyle(color: Colors.white,),
+                style: Theme.of(context).textTheme.labelMedium,
               ),
             ),
           ),
