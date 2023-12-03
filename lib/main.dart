@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:scooter_app/features/onboarding/presentation/view/onboarding_view.dart';
+import 'package:hive_flutter/adapters.dart';
 
 import 'core/theme/dark_theme.dart';
-import 'core/theme/light_theme.dart';
 import 'core/utils/app_router.dart';
+import 'features/add_data/data/data_model/data_model.dart';
 
-void main() {
+void main() async{
+  await Hive.initFlutter();
+  Hive.registerAdapter(DataAdapter());
+  await Hive.openBox<Data>("data");
   runApp(const MyApp());
 }
 
