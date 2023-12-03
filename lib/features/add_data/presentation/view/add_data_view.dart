@@ -13,10 +13,10 @@ class AddDataView extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: BlocProvider(
               create: (context) => AddDataCubit(repo: DataRepoImpl()),
-              child: AddDataViewBody(),
+              child: const AddDataViewBody(),
             ),
           )
       ),
