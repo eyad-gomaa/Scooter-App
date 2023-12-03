@@ -25,6 +25,23 @@ ThemeData darkTheme(){
         bodyMedium: TextStyle(fontSize: 17,color: ColorManager.greyColor,fontWeight: FontWeight.normal),
         bodyLarge: const TextStyle(),
 
+      ),
+
+
+
+
+
+      inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+        enabledBorder: buildOutlineInputBorder(),
+        focusedBorder: buildOutlineInputBorder(),
       )
   );
+
+}
+
+OutlineInputBorder buildOutlineInputBorder() {
+  return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(15),
+      borderSide: BorderSide(color: ColorManager.whiteColor));
 }

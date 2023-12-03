@@ -94,7 +94,7 @@ class Page extends StatelessWidget {
             if (BlocProvider.of<ChangePageCubit>(context).currentIndex != 2) {
               BlocProvider.of<ChangePageCubit>(context).changePage(controller: _controller);
             } else {
-              GoRouter.of(context).pushReplacement(RouterPath.homeView);
+              GoRouter.of(context).pushReplacement(RouterPath.addDataView);
             }
           },
           child: Container(
