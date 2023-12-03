@@ -31,6 +31,13 @@ ThemeData lightTheme(){
   ),
 
 
+      colorScheme: const ColorScheme.light(
+        background: Color(0xfff5f7fa),
+        primary: Color(0xffe4e7eb),
+        secondary: Color(0xffcbd2d9),
+      ),
+
+      scaffoldBackgroundColor: const Color(0xfff5f7fa),
 
 
     inputDecorationTheme: InputDecorationTheme(

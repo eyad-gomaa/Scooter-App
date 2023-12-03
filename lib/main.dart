@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'core/theme/dark_theme.dart';
+import 'core/theme/light_theme.dart';
 import 'core/utils/app_router.dart';
 import 'features/add_data/data/data_model/data_model.dart';
 

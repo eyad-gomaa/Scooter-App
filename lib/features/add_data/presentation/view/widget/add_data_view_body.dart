@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:scooter_app/core/utils/app_router.dart';
 import 'package:scooter_app/features/add_data/presentation/manager/add_data_cubit/add_data_cubit.dart';
 import 'package:scooter_app/features/add_data/presentation/view/widget/add_data_form.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../../../../core/widgets/large_button.dart';
 
 class AddDataViewBody extends StatefulWidget {
@@ -40,10 +41,11 @@ class _AddDataViewBodyState extends State<AddDataViewBody> {
           Padding(
               padding: const EdgeInsets.all(20),
               child: LargeButton(
-                onTap: () {
+                onTap: () async{
                   if (_formKey.currentState!.validate()) {
-                    // Process data.
                     _formKey.currentState!.save();
+                    final SharedPreferences prefs = await SharedPreferences.getInstance();
+                    await prefs.setString('dataAdded', "true");
                   }
                 },
                 text: "التالي",

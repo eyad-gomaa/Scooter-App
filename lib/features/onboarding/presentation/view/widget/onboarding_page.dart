@@ -21,18 +21,25 @@ class onBoardingPage extends StatelessWidget {
           height: 0,
         ),
         Text(model.title, style: Theme.of(context).textTheme.displayLarge),
-        Column(
-          children: [
-            SizedBox(
-                width: MediaQuery.sizeOf(context).width / 1.9,
-                child: AspectRatio(
-                    aspectRatio: 1 / 1, child: Image.asset(model.imgUrl))),
-            Text(
-              model.about,
-              style: Theme.of(context).textTheme.bodyMedium,
-              textAlign: TextAlign.center,
+        Center(
+          child: Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                      width: MediaQuery.sizeOf(context).width / 1.9,
+                      child: AspectRatio(
+                          aspectRatio: 1 / 1, child: Image.asset(model.imgUrl))),
+                  Text(
+                    model.about,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
             ),
-          ],
+          ),
         ),
         LargeButton(
           onTap: () {

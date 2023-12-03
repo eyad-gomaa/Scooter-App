@@ -28,8 +28,13 @@ ThemeData darkTheme(){
       ),
 
 
+      colorScheme: const ColorScheme.dark(
+        background: Color(0xff252526),
+        primary: Color(0xff2d2d30),
+        secondary: Color(0xff3e3e42),
+      ),
 
-
+      scaffoldBackgroundColor: const Color(0xff252526),
 
       inputDecorationTheme: InputDecorationTheme(
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
