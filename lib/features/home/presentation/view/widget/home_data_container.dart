@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:scooter_app/core/utils/app_router.dart';
 import 'package:scooter_app/features/add_data/data/data_model/data_model.dart';
 
 class HomeDataContainer extends StatelessWidget {
@@ -7,54 +9,59 @@ class HomeDataContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 10),
-          child: Container(
-            height: MediaQuery.sizeOf(context).height/5,
-            decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primary,
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "${dataModel.lastChangeKm} Km",style: Theme.of(context).textTheme.titleLarge,),
-                      Text("اخر فحص",style: Theme.of(context).textTheme.titleLarge,),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("${nextUpdate(dataModel.name,dataModel.lastChangeKm)} Km",style: Theme.of(context).textTheme.titleLarge,),
-                      Text("الفحص القادم",style: Theme.of(context).textTheme.titleLarge,),
-                    ],
-                  )
-                ],
+    return GestureDetector(
+      onTap: (){
+        GoRouter.of(context).push(RouterPath.editDataView);
+      },
+      child: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(bottom: 10),
+            child: Container(
+              height: MediaQuery.sizeOf(context).height/5,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "${dataModel.lastChangeKm} Km",style: Theme.of(context).textTheme.titleLarge,),
+                        Text("اخر فحص",style: Theme.of(context).textTheme.titleLarge,),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("${nextUpdate(dataModel.name,dataModel.lastChangeKm)} Km",style: Theme.of(context).textTheme.titleLarge,),
+                        Text("الفحص القادم",style: Theme.of(context).textTheme.titleLarge,),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-        Container(
-          width : MediaQuery.sizeOf(context).width,
-          height: MediaQuery.sizeOf(context).height/10,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              image: const DecorationImage(
-                  image: AssetImage("assets/images/engine.png"),
-                  fit: BoxFit.cover
-              )
-          ),
-          child: Center(child: Text(dataModel.name,style:Theme.of(context).textTheme.headlineSmall,)),
-        )
-      ],
+          Container(
+            width : MediaQuery.sizeOf(context).width,
+            height: MediaQuery.sizeOf(context).height/10,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: const DecorationImage(
+                    image: AssetImage("assets/images/engine.png"),
+                    fit: BoxFit.cover
+                )
+            ),
+            child: Center(child: Text(dataModel.name,style:Theme.of(context).textTheme.headlineSmall,)),
+          )
+        ],
+      ),
     );
   }
 }
