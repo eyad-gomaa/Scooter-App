@@ -8,7 +8,7 @@ class ChangePageCubit extends Cubit<ChangePageState> {
 
   void changePage({required PageController controller}){
     currentIndex += 1;
-    controller.nextPage(duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
+    controller.nextPage(duration: const Duration(milliseconds: 200), curve: Curves.easeIn);
     emit(ChangePageSuccess());
   }
 }

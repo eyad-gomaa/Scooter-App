@@ -8,7 +8,7 @@ ThemeData lightTheme(){
       fontFamily: GoogleFonts.cairo().fontFamily,
       textTheme: TextTheme(
       //headline
-      displaySmall:TextStyle(fontSize: 22,color: ColorManager.blackColor,fontWeight: FontWeight.bold),
+      displaySmall:TextStyle(fontSize: 20,color: ColorManager.blackColor,fontWeight: FontWeight.bold),
       displayMedium:TextStyle(fontSize: 25,color: ColorManager.blackColor,fontWeight: FontWeight.bold),
       displayLarge:TextStyle(fontSize: 28,color: ColorManager.blackColor,fontWeight: FontWeight.bold),
       //title

@@ -9,7 +9,7 @@ ThemeData darkTheme(){
       fontFamily: GoogleFonts.cairo().fontFamily,
       textTheme: TextTheme(
         //headline
-        displaySmall:TextStyle(fontSize: 22,color: ColorManager.whiteColor,fontWeight: FontWeight.bold),
+        displaySmall:TextStyle(fontSize: 20,color: ColorManager.whiteColor,fontWeight: FontWeight.bold),
         displayMedium:TextStyle(fontSize: 25,color: ColorManager.whiteColor,fontWeight: FontWeight.bold),
         displayLarge:TextStyle(fontSize: 28,color: ColorManager.whiteColor,fontWeight: FontWeight.bold),
         //title

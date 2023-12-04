@@ -17,18 +17,10 @@ class DataListView extends StatelessWidget {
       child: BlocBuilder<FetchDataCubit, FetchDataState>(
         builder: (context, state) {
           if(state is FetchDataSuccess){
-            return GridView.builder(
+            return ListView.builder(
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: state.dataList.length,
                 shrinkWrap: true,
-                gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: MediaQuery
-                        .sizeOf(context)
-                        .width / 2,
-                    childAspectRatio: 2 / 1,
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 20
-                ),
                 itemBuilder: (context, index) => HomeDataContainer(dataModel:state.dataList[index] ,)
             );
           }else{

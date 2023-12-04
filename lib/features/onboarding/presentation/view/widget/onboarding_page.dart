@@ -15,17 +15,16 @@ class onBoardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
       children: [
         const SizedBox(
           height: 0,
         ),
         Text(model.title, style: Theme.of(context).textTheme.displayLarge),
-        Center(
-          child: Expanded(
+        Expanded(
+          child: Center(
             child: SingleChildScrollView(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SizedBox(
                       width: MediaQuery.sizeOf(context).width / 1.9,
@@ -33,7 +32,7 @@ class onBoardingPage extends StatelessWidget {
                           aspectRatio: 1 / 1, child: Image.asset(model.imgUrl))),
                   Text(
                     model.about,
-                    style: Theme.of(context).textTheme.bodyMedium,
+                    style: Theme.of(context).textTheme.bodySmall,
                     textAlign: TextAlign.center,
                   ),
                 ],

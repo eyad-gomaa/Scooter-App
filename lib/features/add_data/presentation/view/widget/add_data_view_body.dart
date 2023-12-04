@@ -30,11 +30,12 @@ class _AddDataViewBodyState extends State<AddDataViewBody> {
             padding: const EdgeInsets.all(20),
             child: Text(
               "ادخل عدد كيلوميترات اخر فحص او تغيير",
-              style: Theme.of(context).textTheme.displayMedium,
+              style: Theme.of(context).textTheme.displaySmall,
             ),
           ),
           Expanded(
             child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
               child: AddDataForm(formKey: _formKey,)
             ),
           ),
