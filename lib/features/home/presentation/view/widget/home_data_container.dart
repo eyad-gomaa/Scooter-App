@@ -11,7 +11,7 @@ class HomeDataContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        GoRouter.of(context).push(RouterPath.editDataView);
+        GoRouter.of(context).push(RouterPath.editDataView,extra: dataModel);
       },
       child: Stack(
         children: [

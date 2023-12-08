@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../manager/fetch_data_cubit/fetch_data_cubit.dart';
 import '../../manager/fetch_data_cubit/fetch_data_state.dart';
 import 'home_data_container.dart';

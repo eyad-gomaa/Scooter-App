@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:scooter_app/features/add_data/data/data_model/data_model.dart';
 
 import '../../features/add_data/presentation/view/add_data_view.dart';
 import '../../features/edit_data/view/edit_data_view.dart';
@@ -34,7 +35,7 @@ final GoRouter router = GoRouter(
     const AddDataView()),
       GoRoute(
     path: RouterPath.editDataView,
-    builder: (BuildContext context, GoRouterState state) =>
-    const EditDataView()),
+    builder: (BuildContext context, GoRouterState state) => EditDataView(dataModel: state.extra as Data),
+      ),
     ]
 );

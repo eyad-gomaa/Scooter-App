@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:scooter_app/core/utils/app_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({Key? key}) : super(key: key);
 
@@ -11,6 +12,11 @@ class SplashViewBody extends StatefulWidget {
 }
 
 class _SplashViewBodyState extends State<SplashViewBody> {
+  isAddedData()async{
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? isDataAdded = prefs.getString("dataAdded");
+    return isDataAdded;
+  }
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 5),(){
@@ -19,9 +25,8 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     super.initState();
   }
   dataAdded()async{
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? isDataAdded = prefs.getString("dataAdded");
-    if(isDataAdded == null){
+    isAddedData();
+    if(isAddedData() == null){
       GoRouter.of(context).pushReplacement(RouterPath.onboardingView);
     }else{
       GoRouter.of(context).pushReplacement(RouterPath.homeView);

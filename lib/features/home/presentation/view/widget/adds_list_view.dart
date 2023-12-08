@@ -43,7 +43,7 @@ class _AddsListViewState extends State<AddsListView> {
             }),
 
           ),
-          SizedBox(height: 20,),
+          const SizedBox(height: 20,),
           AnimatedSmoothIndicator(
             activeIndex: BlocProvider.of<IndicatorCubit>(context).currentIndex,
             count: widget.cont.length,
