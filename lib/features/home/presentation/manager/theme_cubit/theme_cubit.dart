@@ -6,6 +6,7 @@ class ThemeCubit extends Cubit<AppThemeState>  {
   bool switchValue = true;
 
   void setLightMode() async{
+    switchValue = false;
     emit(SetLightMode());
   }
 

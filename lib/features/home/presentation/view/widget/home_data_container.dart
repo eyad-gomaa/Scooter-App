@@ -54,7 +54,7 @@ class HomeDataContainer extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 image: const DecorationImage(
-                    image: AssetImage("assets/images/engine.png"),
+                    image: AssetImage("assets/images/scooter_background.png"),
                     fit: BoxFit.cover
                 )
             ),

@@ -6,6 +6,7 @@ ThemeData lightTheme(){
   return ThemeData(
     brightness: Brightness.light,
       fontFamily: GoogleFonts.cairo().fontFamily,
+      // Text Theme
       textTheme: TextTheme(
       //headline
       displaySmall:TextStyle(fontSize: 20,color: ColorManager.blackColor,fontWeight: FontWeight.bold),
@@ -29,17 +30,24 @@ ThemeData lightTheme(){
 
 
   ),
-
-
+      // color Scheme
       colorScheme: const ColorScheme.light(
         background: Color(0xfff5f7fa),
         primary: Color(0xffe4e7eb),
-        secondary: Color(0xffcbd2d9),
+        secondary: Color(0xffcbd3d9),
       ),
-
+      // scaffold Background Color
       scaffoldBackgroundColor: const Color(0xfff5f7fa),
-
-
+      // appBar Theme
+      appBarTheme: AppBarTheme(
+          actionsIconTheme: IconThemeData(
+              color: ColorManager.blackColor
+          ),
+        iconTheme: IconThemeData(
+            color: ColorManager.blackColor
+        ),
+      ),
+      // input Decoration Theme
     inputDecorationTheme: InputDecorationTheme(
       border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
       enabledBorder: buildOutlineInputBorder(),
