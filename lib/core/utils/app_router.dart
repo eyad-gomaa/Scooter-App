@@ -7,12 +7,14 @@ import '../../features/edit_data/view/edit_data_view.dart';
 import '../../features/home/presentation/view/home_view.dart';
 import '../../features/onboarding/presentation/view/onboarding_view.dart';
 import '../../features/splash/presentation/view/splash_view.dart';
+import '../../features/trusted_places/presentation/view/trusted_places_view.dart';
 class RouterPath{
   static const splashView = "/";
   static const onboardingView = "/onboardingView";
   static const homeView = "/homeView";
   static const addDataView = "/addDataView";
   static const editDataView = "/editDataView";
+  static const trustedPlacesView = "/trustedPlacesView";
 }
 final GoRouter router = GoRouter(
     routes: [
@@ -36,6 +38,10 @@ final GoRouter router = GoRouter(
       GoRoute(
     path: RouterPath.editDataView,
     builder: (BuildContext context, GoRouterState state) => EditDataView(dataModel: state.extra as Data),
+      ),
+      GoRoute(
+    path: RouterPath.trustedPlacesView,
+    builder: (BuildContext context, GoRouterState state) => const TrustedPlacesView(),
       ),
     ]
 );

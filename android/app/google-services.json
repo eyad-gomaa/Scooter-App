@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "990622787789",
+    "project_id": "scooter-app-406700",
+    "storage_bucket": "scooter-app-406700.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:990622787789:android:33e6b1f5ffcbfdced96184",
+        "android_client_info": {
+          "package_name": "com.example.scooter_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAupndeooo8lvzQy9tVuvfQpqoCD_RtLis"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:scooter_app/core/utils/app_router.dart';
 import '../../../../../core/resources/color_manager.dart';
+import '../../../../trusted_places/presentation/manager/trusted_places_cubit/trusted_places_cubit.dart';
 import '../../manager/theme_cubit/theme_cubit.dart';
 import '../../manager/theme_cubit/theme_state.dart';
 
@@ -20,6 +23,19 @@ class HomeDrawer extends StatelessWidget {
               Text("Welcome",style: Theme.of(context).textTheme.displayLarge,textAlign: TextAlign.start),
               const SizedBox(height: 30,),
               const DarkModeSwitchContainer(),
+
+              GestureDetector(
+                onTap:(){
+                  BlocProvider.of<TrustedPlacesCubit>(context).getTrustedPlaces();
+                  GoRouter.of(context).push(RouterPath.trustedPlacesView);
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text("اماكن الصيانه الموثوقه",style: Theme.of(context).textTheme.displaySmall,),
+                  ],
+                ),
+              )
             ],
           ),
         ),
