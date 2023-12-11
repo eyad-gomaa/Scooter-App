@@ -23,7 +23,7 @@ class HomeDrawer extends StatelessWidget {
               Text("Welcome",style: Theme.of(context).textTheme.displayLarge,textAlign: TextAlign.start),
               const SizedBox(height: 30,),
               const DarkModeSwitchContainer(),
-
+              const SizedBox(height: 20,),
               GestureDetector(
                 onTap:(){
                   BlocProvider.of<TrustedPlacesCubit>(context).getTrustedPlaces();

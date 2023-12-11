@@ -11,9 +11,9 @@ class TrustedPlacesView extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: Text("اماكن الصيانه الموثوقه"),
+        title: const Text("اماكن الصيانه الموثوقه"),
       ),
-        body: SafeArea(
+        body: const SafeArea(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: TrustedPlacesViewBody(),

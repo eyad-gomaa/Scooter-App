@@ -4,4 +4,6 @@ import 'package:scooter_app/features/trusted_places/data/model/trusted_places_mo
 
 abstract class TrustedPlacesRepo{
   Future<Either<List<TrustedPlacesModel>,FirebaseException>> getTrustedPlaces();
+  void launchUrlPage({required Uri url});
+  void launchUrlPhone({required String url});
 }

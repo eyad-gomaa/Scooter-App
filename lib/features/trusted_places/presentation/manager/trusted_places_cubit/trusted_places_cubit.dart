@@ -21,4 +21,11 @@ class TrustedPlacesCubit extends Cubit<TrustedPlacesState> {
       }
     }
   }
+  launchUrlPage({required Uri url}){
+    repo.launchUrlPage(url: url);
+  }
+  launchUrlPhone({required String url}){
+    repo.launchUrlPhone(url: url);
+  }
+
 }

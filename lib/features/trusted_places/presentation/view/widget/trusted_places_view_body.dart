@@ -13,11 +13,12 @@ class TrustedPlacesViewBody extends StatelessWidget {
       builder: (context, state) {
         if(state is TrustedPlacesSuccess){
           return ListView.builder(
+            physics: const BouncingScrollPhysics(),
             itemCount: state.trustedPlacesList.length,
               itemBuilder: (context, index) => TrustedPlaceContainer(model: state.trustedPlacesList[index],),
           );
         }else{
-          return CircularProgressIndicator();
+          return const Center(child: CircularProgressIndicator());
         }
       },
     );

@@ -37,6 +37,7 @@ ThemeData darkTheme(){
       scaffoldBackgroundColor: const Color(0xff252526),
       // appBar Theme
       appBarTheme: AppBarTheme(
+          titleTextStyle: TextStyle(fontSize: 20,color: ColorManager.whiteColor,fontWeight: FontWeight.bold),
           actionsIconTheme: IconThemeData(
               color: ColorManager.whiteColor
           ),

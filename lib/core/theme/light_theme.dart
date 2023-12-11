@@ -32,14 +32,15 @@ ThemeData lightTheme(){
   ),
       // color Scheme
       colorScheme: const ColorScheme.light(
-        background: Color(0xfff5f7fa),
-        primary: Color(0xffe4e7eb),
+        background: Color(0xfffffffff),
+        primary: Color(0xffF5F6FA),
         secondary: Color(0xffcbd3d9),
       ),
       // scaffold Background Color
-      scaffoldBackgroundColor: const Color(0xfff5f7fa),
+      scaffoldBackgroundColor: const Color(0xfffffffff),
       // appBar Theme
       appBarTheme: AppBarTheme(
+        titleTextStyle: TextStyle(fontSize: 20,color: ColorManager.blackColor,fontWeight: FontWeight.bold),
           actionsIconTheme: IconThemeData(
               color: ColorManager.blackColor
           ),

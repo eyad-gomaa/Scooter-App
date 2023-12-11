@@ -13,7 +13,7 @@ class EditDataView extends StatelessWidget {
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.transparent,
-        title: Text("تعديل",style: Theme.of(context).textTheme.displayMedium,),
+        title: const Text("تعديل",),
       ),
       body: SafeArea(
         child: Padding(
