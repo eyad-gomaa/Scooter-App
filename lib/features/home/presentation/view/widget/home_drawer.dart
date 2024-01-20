@@ -24,18 +24,23 @@ class HomeDrawer extends StatelessWidget {
               const SizedBox(height: 30,),
               const DarkModeSwitchContainer(),
               const SizedBox(height: 20,),
-              GestureDetector(
-                onTap:(){
-                  BlocProvider.of<TrustedPlacesCubit>(context).getTrustedPlaces();
-                  GoRouter.of(context).push(RouterPath.trustedPlacesView);
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text("اماكن الصيانه الموثوقه",style: Theme.of(context).textTheme.displaySmall,),
-                  ],
-                ),
-              )
+              DrawerItem(
+                onTap: (){
+                BlocProvider.of<TrustedPlacesCubit>(context).getTrustedPlaces();
+                GoRouter.of(context).push(RouterPath.trustedPlacesView);
+              },
+                title: "اماكن الصيانه الموثوقه",
+
+              ),
+              const SizedBox(height: 20,),
+              DrawerItem(
+                onTap: (){
+                // BlocProvider.of<TrustedPlacesCubit>(context).getTrustedPlaces();
+                GoRouter.of(context).push(RouterPath.bestProductsView);
+              },
+                title: "افضل المنتجات",
+
+              ),
             ],
           ),
         ),
@@ -45,11 +50,30 @@ class HomeDrawer extends StatelessWidget {
   }
 }
 
+class DrawerItem extends StatelessWidget {
+  const DrawerItem({
+    super.key, required this.onTap, required this.title,
+  });
+  final void Function() onTap;
+  final String title;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap:onTap,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Text(title,style: Theme.of(context).textTheme.displaySmall,),
+        ],
+      ),
+    );
+  }
+}
+
 class DarkModeSwitchContainer extends StatelessWidget {
   const DarkModeSwitchContainer({
     super.key,
   });
-
   @override
   Widget build(BuildContext context) {
     return Row(

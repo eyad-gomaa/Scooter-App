@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:scooter_app/features/add_data/data/data_model/data_model.dart';
 
 import '../../features/add_data/presentation/view/add_data_view.dart';
+import '../../features/best_products/presentation/view/best_products_view.dart';
 import '../../features/edit_data/view/edit_data_view.dart';
 import '../../features/home/presentation/view/home_view.dart';
 import '../../features/onboarding/presentation/view/onboarding_view.dart';
@@ -15,6 +16,7 @@ class RouterPath{
   static const addDataView = "/addDataView";
   static const editDataView = "/editDataView";
   static const trustedPlacesView = "/trustedPlacesView";
+  static const bestProductsView = "/bestProductsView";
 }
 final GoRouter router = GoRouter(
     routes: [
@@ -42,6 +44,10 @@ final GoRouter router = GoRouter(
       GoRoute(
     path: RouterPath.trustedPlacesView,
     builder: (BuildContext context, GoRouterState state) => const TrustedPlacesView(),
+      ),
+      GoRoute(
+    path: RouterPath.bestProductsView,
+    builder: (BuildContext context, GoRouterState state) => const BestProductsView(),
       ),
     ]
 );

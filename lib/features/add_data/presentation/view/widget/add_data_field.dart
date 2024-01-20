@@ -18,7 +18,11 @@ class FieldsRow extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Text(field1Name,style: Theme.of(context).textTheme.titleLarge,),
+            Container(
+              constraints: BoxConstraints(
+                maxWidth: MediaQuery.sizeOf(context).width/2 -40
+              ),
+                child: Text(field1Name,style: Theme.of(context).textTheme.titleLarge,overflow: TextOverflow.ellipsis,)),
             const SizedBox(height: 10,),
             SizedBox(
                 width: MediaQuery.sizeOf(context).width/2 - 40,
@@ -44,7 +48,11 @@ class FieldsRow extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            Text(field2Name,style: Theme.of(context).textTheme.titleLarge,),
+            Container(
+                constraints: BoxConstraints(
+                  maxWidth: MediaQuery.sizeOf(context).width/2 -20,
+    ),
+                child: Text(field2Name,style: Theme.of(context).textTheme.titleLarge,overflow: TextOverflow.ellipsis,)),
             const SizedBox(height: 10,),
             SizedBox(
                 width: MediaQuery.sizeOf(context).width/2 - 40,

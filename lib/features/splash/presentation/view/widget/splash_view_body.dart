@@ -12,26 +12,23 @@ class SplashViewBody extends StatefulWidget {
 }
 
 class _SplashViewBodyState extends State<SplashViewBody> {
-  isAddedData()async{
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? isDataAdded = prefs.getString("dataAdded");
-    return isDataAdded;
-  }
   @override
   void initState() {
+
     Future.delayed(const Duration(seconds: 5),(){
       dataAdded();
     });
     super.initState();
   }
   dataAdded()async{
-    isAddedData();
-    if(isAddedData() == null){
-      GoRouter.of(context).pushReplacement(RouterPath.onboardingView);
-    }else{
-      GoRouter.of(context).pushReplacement(RouterPath.homeView);
-    }
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
 
+    bool? isDataAdded =  prefs.getBool("dataAdded");
+    if(isDataAdded != null || isDataAdded == true){
+      GoRouter.of(context).pushReplacement(RouterPath.homeView);
+    }else{
+      GoRouter.of(context).pushReplacement(RouterPath.onboardingView);
+    }
   }
   @override
   Widget build(BuildContext context) {

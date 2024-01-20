@@ -46,7 +46,7 @@ class _AddDataViewBodyState extends State<AddDataViewBody> {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
                     final SharedPreferences prefs = await SharedPreferences.getInstance();
-                    await prefs.setString('dataAdded', "true");
+                    await prefs.setBool('dataAdded', true);
                   }
                 },
                 text: "التالي",
