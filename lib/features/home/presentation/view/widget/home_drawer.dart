@@ -18,29 +18,47 @@ class HomeDrawer extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(right: 20,left:20,top: 50),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("Welcome",style: Theme.of(context).textTheme.displayLarge,textAlign: TextAlign.start),
-              const SizedBox(height: 30,),
-              const DarkModeSwitchContainer(),
-              const SizedBox(height: 20,),
-              DrawerItem(
-                onTap: (){
-                BlocProvider.of<TrustedPlacesCubit>(context).getTrustedPlaces();
-                GoRouter.of(context).push(RouterPath.trustedPlacesView);
-              },
-                title: "اماكن الصيانه الموثوقه",
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("Welcome",style: Theme.of(context).textTheme.displayLarge,textAlign: TextAlign.start),
+                  const SizedBox(height: 30,),
+                  const DarkModeSwitchContainer(),
+                  const SizedBox(height: 20,),
+                  DrawerItem(
+                    onTap: (){
+                    BlocProvider.of<TrustedPlacesCubit>(context).getTrustedPlaces();
+                    GoRouter.of(context).push(RouterPath.trustedPlacesView);
+                  },
+                    title: "اماكن الصيانه الموثوقه",
 
-              ),
-              const SizedBox(height: 20,),
-              DrawerItem(
-                onTap: (){
-                // BlocProvider.of<TrustedPlacesCubit>(context).getTrustedPlaces();
-                GoRouter.of(context).push(RouterPath.bestProductsView);
-              },
-                title: "افضل المنتجات",
+                  ),
+                  const SizedBox(height: 20,),
+                  DrawerItem(
+                    onTap: (){
+                    // BlocProvider.of<TrustedPlacesCubit>(context).getTrustedPlaces();
+                    GoRouter.of(context).push(RouterPath.bestProductsView);
+                  },
+                    title: "افضل المنتجات",
 
+                  ),
+                  const SizedBox(height: 20,),
+                  DrawerItem(
+                    onTap: (){
+                    // BlocProvider.of<TrustedPlacesCubit>(context).getTrustedPlaces();
+                    GoRouter.of(context).push(RouterPath.helpYourselfView);
+                  },
+                    title: "ساعد نفسك",
+
+                  ),
+
+                ],
               ),
+              Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text("cc : eyad gomaa",style: TextStyle(color: Colors.white.withOpacity(0.1)),))
             ],
           ),
         ),
