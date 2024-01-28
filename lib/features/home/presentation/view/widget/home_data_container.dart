@@ -18,7 +18,7 @@ class HomeDataContainer extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 10),
             child: Container(
-              height: MediaQuery.sizeOf(context).height/5,
+              height: MediaQuery.sizeOf(context).height/4,
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.primary,
                 borderRadius: BorderRadius.circular(10),

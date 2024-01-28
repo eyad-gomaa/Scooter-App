@@ -17,7 +17,7 @@ class TrustedPlaceContainer extends StatelessWidget {
         const SizedBox(height: 10,),
         Container(
           width: MediaQuery.sizeOf(context).width,
-          height: 150,
+          height: MediaQuery.sizeOf(context).height /4,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             color: Theme.of(context).colorScheme.primary,
@@ -52,7 +52,7 @@ class TrustedPlaceContainer extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 25,),
-                  ImageContainer(model: model),
+                  Center(child: ImageContainer(model: model)),
                 ],
               ),
             ),
@@ -75,15 +75,17 @@ class ImageContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width:150,
-
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(15),
-        child: CachedNetworkImage(
-          fit: BoxFit.cover,
-          imageUrl: model.image,
-          placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
-          errorWidget: (context, url, error) => const Icon(Icons.error),
+      width: MediaQuery.sizeOf(context).width/4,
+      child: AspectRatio(
+        aspectRatio: 1,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(15),
+          child: CachedNetworkImage(
+            fit: BoxFit.cover,
+            imageUrl: model.image,
+            placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+            errorWidget: (context, url, error) => const Icon(Icons.error),
+          ),
         ),
       ),
     );

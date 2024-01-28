@@ -35,7 +35,8 @@ class _YoutubeVideoContainerState extends State<YoutubeVideoContainer> {
       initialVideoId: videoId!,
       flags: const YoutubePlayerFlags(
         autoPlay: false,
-        mute: true,
+        mute: false,
+        disableDragSeek: true
       ),
 
     );

@@ -58,7 +58,13 @@ class HomeDrawer extends StatelessWidget {
               ),
               Align(
                   alignment: Alignment.centerLeft,
-                  child: Text("cc : eyad gomaa",style: TextStyle(color: Colors.white.withOpacity(0.1)),))
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Icon(Icons.copyright_outlined,size: 11,color: Colors.white.withOpacity(0.2),),
+                      Text("  eyad gomaa",style: TextStyle(color: Colors.white.withOpacity(0.2),fontSize: 10),),
+                    ],
+                  ))
             ],
           ),
         ),
@@ -81,7 +87,7 @@ class DrawerItem extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Text(title,style: Theme.of(context).textTheme.displaySmall,),
+          Text(title,style: Theme.of(context).textTheme.bodyLarge,),
         ],
       ),
     );
@@ -109,7 +115,7 @@ class DarkModeSwitchContainer extends StatelessWidget {
             }
 
         ),
-        Text("الوضع الداكن",style: Theme.of(context).textTheme.displaySmall,),
+        Text("الوضع الداكن",style: Theme.of(context).textTheme.bodyLarge,),
       ],
     );
   }
